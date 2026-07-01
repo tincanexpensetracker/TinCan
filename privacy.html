@@ -307,8 +307,9 @@
     <div class="pills">
       <span class="pill">🔐 Encrypted in transit</span>
       <span class="pill">🙅 We never sell your data</span>
+      <span class="pill">📣 Ad-supported · Premium removes ads</span>
       <span class="pill">🪙 Your money, your data</span>
-      <span class="pill date">Updated 22 June 2026</span>
+      <span class="pill date">Updated 1 July 2026</span>
     </div>
 
     <div class="promise">
@@ -328,6 +329,8 @@
         <li><a href="#s4"><span class="n">04</span> How we use it</a></li>
         <li><a href="#s5"><span class="n">05</span> Where data is stored</a></li>
         <li><a href="#s6"><span class="n">06</span> Data sharing</a></li>
+        <li><a href="#s-ads"><span class="n">06a</span> Advertising</a></li>
+        <li><a href="#s-premium"><span class="n">06b</span> Premium &amp; payments</a></li>
         <li><a href="#s7"><span class="n">07</span> Retention &amp; deletion</a></li>
         <li><a href="#delete-account"><span class="n">07a</span> Delete your account</a></li>
         <li><a href="#s8"><span class="n">08</span> Security</a></li>
@@ -365,6 +368,12 @@
         and are not transmitted to us or any third party. If you uninstall the app or clear its
         data, this information is permanently deleted.
       </p>
+      <p class="note">
+        One exception: if you see ads (the free tier, including guest mode), Google&rsquo;s AdMob
+        SDK still processes your device&rsquo;s resettable Advertising ID to show ads, as described
+        in the <a href="#s-ads">Advertising</a> section. That is separate from your savings data,
+        which stays on your device. Premium subscribers see no ads.
+      </p>
     </section>
 
     <section class="block" id="s3">
@@ -388,13 +397,19 @@
           notes, time, and repeat settings you enter are saved <strong>only on your device</strong>
           and are used to schedule a local notification. This reminder content is never uploaded
           to us or any third party, and it stays on the device even if you are signed in.</li>
+        <li><strong>Advertising data (non-Premium users, including guests).</strong> To show ads,
+          Google AdMob collects your device&rsquo;s resettable <strong>Advertising ID</strong>,
+          IP address, and ad/device-interaction data. See the <a href="#s-ads">Advertising</a>
+          section for details and your choices. Premium subscribers see no ads.</li>
       </ul>
       <p class="note">
-        We do <strong>not</strong> collect your contacts, location, photos library, SMS,
-        or call logs. We use the information described above only to run the app for you.
+        We do <strong>not</strong> collect your contacts, precise/GPS location, photos library,
+        SMS, or call logs. We use the information described above only to run the app for you.
         Your display currency is taken from your device&rsquo;s region/language settings (or the
         currency you pick manually in Settings) — we do <strong>not</strong> use GPS or location
         to determine it, and the choice stays on your device / in your account settings.
+        (For ads, Google may infer a coarse, approximate location from your IP address — see the
+        <a href="#s-ads">Advertising</a> section.)
       </p>
       <p class="note">
         <strong>Device permissions for reminders.</strong> Payment reminders use your device&rsquo;s
@@ -437,11 +452,84 @@
       <ul>
         <li><strong>With Google Firebase</strong>, as our infrastructure provider, solely to
           operate the app.</li>
+        <li><strong>With Google AdMob</strong> (for users who are not Premium subscribers,
+          including guests), to display ads. This may include your Advertising ID and
+          device/ad-interaction data — see the <a href="#s-ads">Advertising</a> section.</li>
+        <li><strong>With Google Play Billing</strong>, only to process Premium subscription
+          purchases — see <a href="#s-premium">Premium &amp; payments</a>.</li>
         <li><strong>With other group members</strong>, but only the data within groups you
           choose to create or join.</li>
         <li><strong>Where required by law</strong>, to comply with a valid legal obligation.</li>
       </ul>
-      <p>We never sell or rent your personal data to advertisers or data brokers.</p>
+      <p>
+        We do <strong>not</strong> sell or rent your personal data to data brokers for money.
+        We use Google AdMob to show ads, which may use your Advertising ID for personalized ads;
+        you can opt out of personalized ads at any time (see <a href="#s-ads">Advertising</a>).
+      </p>
+    </section>
+
+    <section class="block" id="s-ads">
+      <div class="head"><span class="num">6a</span><h2>Advertising</h2></div>
+      <p>
+        TINCAN is free to use and supported by ads. We use <strong>Google AdMob</strong> (a Google
+        advertising service) to show ads to users who are <strong>not</strong> Premium subscribers,
+        including guests. <strong>Premium subscribers never see ads.</strong>
+      </p>
+      <p>To serve and measure ads, the Google Mobile Ads SDK and AdMob may collect and process:</p>
+      <ul>
+        <li>your device&rsquo;s resettable <strong>Advertising ID</strong>;</li>
+        <li>your <strong>IP address</strong> and general device information (model, OS version, language);</li>
+        <li><strong>ad-interaction data</strong> (which ads were shown, viewed, or tapped).</li>
+      </ul>
+      <p>
+        Google may use this data to serve, cap, and measure ads and, where permitted, to show
+        <strong>personalized</strong> ads. AdMob may infer a coarse, <strong>approximate location
+        from your IP address</strong> for ad relevance — TINCAN itself never accesses your
+        device&rsquo;s GPS or precise location.
+      </p>
+      <p><strong>Your choices:</strong></p>
+      <ul>
+        <li><strong>EEA, UK &amp; Switzerland.</strong> Before serving personalized ads we show a
+          Google-certified consent request (via Google&rsquo;s User Messaging Platform). You can
+          change your choice anytime through <em>&ldquo;Ad privacy options&rdquo;</em> in the
+          app&rsquo;s Settings.</li>
+        <li><strong>Reset or delete your Advertising ID.</strong> On your device, open
+          <em>Settings &rarr; Google &rarr; Ads</em> to reset or delete it. Deleting it (or declining
+          consent) means you&rsquo;ll see <strong>non-personalized</strong> ads instead.</li>
+        <li><strong>Remove ads entirely.</strong> Subscribe to Premium, which disables all ads.</li>
+      </ul>
+      <p>
+        <strong>Rewarded ads.</strong> TINCAN offers optional &ldquo;rewarded&rdquo; ads you can
+        <em>choose</em> to watch in exchange for in-app benefits (such as removing ads for the day
+        or earning an extra cloud sync). Watching them is always optional.
+      </p>
+      <p class="muted">
+        Google&rsquo;s handling of advertising data is governed by the
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>
+        and
+        <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">&ldquo;How Google uses information from sites or apps that use our services&rdquo;</a>.
+      </p>
+    </section>
+
+    <section class="block" id="s-premium">
+      <div class="head"><span class="num">6b</span><h2>Premium subscription &amp; payments</h2></div>
+      <p>
+        TINCAN offers an optional <strong>Premium subscription</strong> (monthly or annual) that
+        removes ads and unlocks extra features such as Family mode, the Family pool, real-time Live
+        Sync, and unlimited cloud syncs.
+      </p>
+      <p>
+        Subscriptions are sold and processed by <strong>Google Play Billing</strong>. We do
+        <strong>not</strong> receive or store your payment-card or bank details — Google handles the
+        entire transaction. We receive only your <strong>subscription status</strong> (active or
+        expired, the plan, and the platform), which we store with your account so we can unlock
+        Premium features across your devices.
+      </p>
+      <p>
+        You can manage, change, or cancel your subscription anytime in the <strong>Google Play
+        Store &rarr; Subscriptions</strong>. Billing, renewals, and refunds are handled under
+        <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">Google Play&rsquo;s terms</a>.
+      </p>
     </section>
 
     <section class="block" id="s7">
@@ -500,7 +588,8 @@
       <div class="head"><span class="num">9</span><h2>Children&rsquo;s privacy</h2></div>
       <p>
         TINCAN is not directed at children under 13 (or the minimum age required in your
-        jurisdiction). We do not knowingly collect personal information from children. If you
+        jurisdiction), and because it displays advertising it is intended for a general (13+)
+        audience. We do not knowingly collect personal information from children. If you
         believe a child has provided us with personal data, please contact us so we can delete it.
       </p>
     </section>
