@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TINCAN — Delete Your Account &amp; Data</title>
+  <meta name="description" content="How to permanently delete your TINCAN account and all associated data, in the app or by request." />
+  <meta name="theme-color" content="#7c4dff" />
+  <style>
+    :root {
+      --bg-1: #f3f0ff; --bg-2: #f8f9ff; --bg-3: #ffeef6;
+      --card: rgba(255,255,255,0.82); --text: #1a237e; --muted: #5b6087;
+      --accent: #7c4dff; --accent-2: #ff4081;
+      --grad-start: #6200ee; --grad-end: #ff4081;
+      --accent-soft: rgba(124,77,255,0.10); --border: rgba(26,35,126,0.12);
+      --shadow: 0 18px 50px -22px rgba(98,0,238,0.30); --ring: rgba(124,77,255,0.35);
+    }
+    [data-theme="dark"] {
+      --bg-1: #1a1147; --bg-2: #11122e; --bg-3: #2a1040;
+      --card: rgba(36,33,84,0.62); --text: #ece9ff; --muted: #a9a4d8;
+      --accent: #b39bff; --accent-2: #ff6aa0;
+      --grad-start: #8b5cf6; --grad-end: #ff4d8d;
+      --accent-soft: rgba(179,155,255,0.14); --border: rgba(236,233,255,0.12);
+      --shadow: 0 22px 60px -24px rgba(0,0,0,0.7); --ring: rgba(179,155,255,0.4);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; color: var(--text); line-height: 1.7;
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 700px at 12% -8%, var(--bg-1), transparent 60%),
+        radial-gradient(1000px 650px at 100% 0%, var(--bg-3), transparent 55%),
+        radial-gradient(900px 700px at 50% 120%, var(--bg-2), transparent 60%),
+        var(--bg-2);
+      background-attachment: fixed; min-height: 100vh;
+    }
+    .toggle {
+      position: fixed; top: 16px; right: 16px; z-index: 55;
+      width: 44px; height: 44px; display: grid; place-items: center;
+      border-radius: 50%; border: 1px solid var(--border); background: var(--card);
+      backdrop-filter: blur(10px); color: var(--text); cursor: pointer;
+      font-size: 1.15rem; box-shadow: var(--shadow);
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 3.5rem 1.25rem 5rem; }
+    header { text-align: center; margin-bottom: 2rem; }
+    .brand {
+      font-size: clamp(2rem, 6vw, 2.8rem); font-weight: 800; margin: 0;
+      background: linear-gradient(120deg, var(--grad-start), var(--grad-end));
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .subtitle { color: var(--muted); font-size: 1.05rem; margin: .4rem 0 0; }
+    section.block {
+      margin: 1rem 0; padding: 1.6rem 1.7rem; border-radius: 18px;
+      background: var(--card); backdrop-filter: blur(10px);
+      border: 1px solid var(--border); box-shadow: var(--shadow); position: relative;
+    }
+    section.block::before {
+      content: ""; position: absolute; left: 0; top: 18px; bottom: 18px; width: 4px;
+      border-radius: 4px; background: linear-gradient(var(--accent), var(--accent-2)); opacity: .8;
+    }
+    h2 { font-size: 1.2rem; margin: 0 0 .6rem; }
+    p, li { color: var(--text); } .muted { color: var(--muted); }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--ring); }
+    ul { padding-left: 1.2rem; } li { margin: .35rem 0; }
+    .step { font-weight: 700; color: var(--accent); }
+    .note {
+      margin-top: .9rem; background: var(--accent-soft); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent); padding: .8rem 1rem; border-radius: 10px;
+      font-size: .94rem; color: var(--muted);
+    }
+    .cta { text-align: center; margin-top: 1rem; }
+    .cta a.mail {
+      display: inline-block; margin-top: .4rem; font-weight: 700; font-size: 1.05rem;
+      padding: .6rem 1.2rem; border-radius: 12px; background: var(--accent); color: #fff;
+      border: none; box-shadow: 0 10px 24px -10px var(--ring);
+    }
+    footer { text-align: center; color: var(--muted); font-size: .85rem; margin-top: 2.5rem; }
+    footer a { margin: 0 .6rem; }
+  </style>
+</head>
+<body>
+  <button class="toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">🌙</button>
+  <div class="wrap">
+    <header>
+      <h1 class="brand">TINCAN</h1>
+      <p class="subtitle">Delete your account &amp; data</p>
+    </header>
+
+    <section class="block">
+      <p class="muted">
+        This page explains how to permanently delete your <strong>TINCAN</strong> account and all
+        associated data. It applies to accounts created with Google Sign-In or with an
+        email address and password. Developer: TINCAN (app package <strong>tincan.ai</strong>).
+      </p>
+    </section>
+
+    <section class="block">
+      <h2>Option 1 — In the app (instant)</h2>
+      <p>If you have the app installed:</p>
+      <ul>
+        <li><span class="step">1.</span> Open <strong>TINCAN</strong> and sign in.</li>
+        <li><span class="step">2.</span> Go to <strong>Settings &rarr; Account &rarr; Delete account</strong>.</li>
+        <li><span class="step">3.</span> Confirm. Your account and data are deleted immediately and permanently.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>Option 2 — Request deletion without the app</h2>
+      <p>
+        You can ask us to delete your account even if you no longer have the app installed. Email
+        <a href="mailto:customercare@tincan.anonaddy.com?subject=Delete%20my%20TINCAN%20account">customercare@tincan.anonaddy.com</a>
+        from the email address associated with your account, with the subject
+        &ldquo;Delete my TINCAN account&rdquo;. We verify your identity and complete the deletion
+        within <strong>30 days</strong>.
+      </p>
+      <div class="cta">
+        <a class="mail" href="mailto:customercare@tincan.anonaddy.com?subject=Delete%20my%20TINCAN%20account">Request account deletion</a>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>What gets deleted</h2>
+      <ul>
+        <li>Your profile, profile picture, and sign-in record</li>
+        <li>All transactions, budgets, recurring payments, piggy banks, and custom categories</li>
+        <li>Your streak history and friends connections</li>
+        <li>Your membership in any shared / family groups (other members&rsquo; data is unaffected)</li>
+      </ul>
+      <div class="note">
+        Deletion is <strong>permanent and cannot be undone</strong>. We do not retain backups of
+        deleted account data beyond what is required to meet legal obligations (for example, fraud
+        prevention); any such residual data is removed on our standard backup-rotation schedule.
+        Data you created in <strong>guest mode</strong> is stored only on your device and is removed
+        by uninstalling the app or clearing its data — there is nothing on our servers to delete.
+      </div>
+    </section>
+
+    <footer>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="mailto:customercare@tincan.anonaddy.com">Contact</a>
+      <div style="margin-top:.6rem">&copy; 2026 TINCAN. All rights reserved.</div>
+    </footer>
+  </div>
+  <script>
+    var toggle = document.getElementById('themeToggle');
+    var root = document.documentElement;
+    var stored = null; try { stored = localStorage.getItem('tincan-theme'); } catch (e) {}
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    function apply(t){ root.setAttribute('data-theme', t); toggle.textContent = t === 'dark' ? '☀️' : '🌙'; }
+    apply(stored || (prefersDark ? 'dark' : 'light'));
+    toggle.addEventListener('click', function(){
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      apply(next); try { localStorage.setItem('tincan-theme', next); } catch (e) {}
+    });
+  </script>
+</body>
+</html>
