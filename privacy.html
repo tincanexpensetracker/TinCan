@@ -309,7 +309,7 @@
       <span class="pill">🙅 We never sell your data</span>
       <span class="pill">📣 Ad-supported · Premium removes ads</span>
       <span class="pill">🪙 Your money, your data</span>
-      <span class="pill date">Updated 1 July 2026</span>
+      <span class="pill date">Updated 20 July 2026</span>
     </div>
 
     <div class="promise">
@@ -384,12 +384,24 @@
           name, email address, Google account identifier, and (if available) your profile
           photo, via Google&rsquo;s sign-in service.</li>
         <li><strong>Financial information you enter.</strong> The savings goals, transactions,
-          amounts, budgets, recurring payments, and notes you create in the app.</li>
+          amounts, budgets, recurring payments, and notes you create in the app &mdash; and, if you
+          use the Savings Planner, the deposits and plans you set up (such as a fixed or recurring
+          deposit, SIP or emergency fund) with their amount, rate, term and maturity date.</li>
         <li><strong>Profile picture.</strong> If you set one, it is uploaded and stored so it can
           appear on your profile and to other members of groups you join.</li>
         <li><strong>Shared / group data.</strong> If you create or join a group, your display
           name, profile photo, and the shared transactions, balances, and transfers within
           that group are visible to other members of the same group.</li>
+        <li><strong>Friends and finding people.</strong> If you sign in, TINCAN saves a small
+          directory entry holding your email address, display name, and account identifier. This
+          is what lets someone confirm an email belongs to a real TINCAN account before inviting
+          you as a friend or to a group. Another signed-in user must already know your
+          <em>exact</em> email address to look you up &mdash; the directory cannot be browsed,
+          searched, or listed in bulk. If you use Friends, TINCAN also keeps a small profile
+          (your display name, profile photo, and current/longest streak) that people you have
+          accepted can see, plus your friend list and pending invitations. <strong>Friends never
+          see any financial data</strong> &mdash; no balances, transactions, budgets, goals or
+          investments. Removing a friend or deleting your account removes this.</li>
         <li><strong>Notifications.</strong> With your permission, we send reminders and updates
           (for example, recurring-payment reminders). You can disable these at any time in
           your device settings.</li>
@@ -404,7 +416,9 @@
       </ul>
       <p class="note">
         We do <strong>not</strong> collect your contacts, precise/GPS location, photos library,
-        SMS, or call logs. We use the information described above only to run the app for you.
+        SMS, or call logs. The app never requests SMS permissions; the optional
+        <a href="#s3a">Auto-track feature</a> works from notifications, entirely on your device.
+        We use the information described above only to run the app for you.
         Your display currency is taken from your device&rsquo;s region/language settings (or the
         currency you pick manually in Settings) — we do <strong>not</strong> use GPS or location
         to determine it, and the choice stays on your device / in your account settings.
@@ -419,6 +433,55 @@
         scheduling, so they may arrive a few minutes around the time you chose, and they respect your
         phone&rsquo;s Do&nbsp;Not&nbsp;Disturb and silent modes.
       </p>
+    </section>
+
+    <section class="block" id="s3a">
+      <div class="head"><span class="num">3a</span><h2>Notification access (Auto-track transactions)</h2></div>
+      <p>
+        TINCAN offers an <strong>optional, off-by-default</strong> feature that detects income and
+        expenses from your incoming notifications — for example bank SMS alerts (as shown by your
+        messaging app) and payment-app notifications — so entries can be added without typing.
+        If you enable it, you will first see an in-app explanation and must then grant TINCAN
+        <em>notification access</em> in Android&rsquo;s system settings.
+      </p>
+      <ul>
+        <li><strong>Entirely on your device.</strong> Notification text is analysed locally, in
+          memory. It is <strong>never stored, never logged, and never sent</strong> to us or to
+          any third party.</li>
+        <li><strong>Only from apps you choose.</strong> TINCAN reads notifications only from the
+          apps you select (your SMS app and finance apps by default); everything else is ignored.</li>
+        <li><strong>Only the essentials are kept.</strong> When a transaction is detected, the app
+          keeps just the amount, merchant name, suggested category, and date. Account numbers,
+          card numbers, and payment handles are removed before anything is saved. One-time
+          passwords (OTPs), promotions, and spam are discarded.</li>
+        <li><strong>You review before it counts.</strong> Detected entries wait in a review list
+          for your approval, unless you explicitly turn on automatic adding (which is undoable).</li>
+        <li><strong>We note what we could not read &mdash; never what it said.</strong> When an
+          alert is <em>not</em> recognised as a transaction, TINCAN keeps a small tally of which
+          app it came from, the reason it was skipped (for example &ldquo;looked like a one-time
+          password&rdquo;), and &mdash; only where the sender is a bank&rsquo;s short code such as
+          AX&#8209;HDFCBK, never a personal phone number &mdash; that code. This is what tells us
+          which banks the app still needs to learn to read. No part of the message is kept, the
+          tally stays on your device, it is <em>not</em> included in your Google Drive backup, it
+          ages out by itself, and it is deleted with the app&rsquo;s data.</li>
+        <li><strong>It learns only from you, only as numbers.</strong> To make future suggestions
+          smarter, the app keeps <em>irreversible numeric features</em> of detected messages
+          (each word is reduced to one of 4,096 numbers, and anything containing digits — amounts,
+          account fragments, codes — is discarded before that step; the original text cannot be
+          reconstructed) together with your review decisions and which app the alert came from
+          (so TINCAN can tell which senders it has read reliably for you). This small learned model
+          never contains message text, is stored only on your device, leaves it only inside your own
+          encrypted Google Drive backup (if you enable backup), and is deleted with the
+          app&rsquo;s data. You can see everything it has learned, and turn the learning off, in
+          Settings &rarr; Auto-track Transactions.</li>
+        <li><strong>Same rules as manual entries.</strong> Approved entries become ordinary
+          transactions: they stay on your device in guest/offline use and sync to your account
+          only if you are signed in with cloud sync enabled (see
+          <a href="#s5">Where your data is stored</a>).</li>
+        <li><strong>Turn it off anytime.</strong> Disable it in TINCAN&rsquo;s Settings →
+          Auto-track Transactions, or revoke notification access in Android&rsquo;s system
+          settings. The app requests <strong>no SMS permissions</strong> for this feature.</li>
+      </ul>
     </section>
 
     <section class="block" id="s4">
@@ -548,14 +611,27 @@
         data at any time, whether or not you still have the app installed.
       </p>
       <p><strong>Option 1 &mdash; In the app (instant):</strong> open
-        <em>Settings &rarr; Account &rarr; Delete account</em>. This immediately and permanently
+        <em>Profile &rarr; My Profile &rarr; Delete Account</em>. This immediately and permanently
         deletes:
       </p>
       <ul>
         <li>Your profile, profile picture, and sign-in record</li>
         <li>All transactions, budgets, recurring payments, piggy banks, and custom categories</li>
+        <li>Your Savings Planner deposits and plans, and your payment reminders</li>
+        <li>Everything Auto-track stored on your device &mdash; pending suggestions, the merchant
+          categories it learned from you, and its on-device learning model</li>
+        <li>Your streak history, medals, friends connections, and your entry in the email look-up
+          directory used for invitations</li>
         <li>Your membership in any shared/family groups (other members&rsquo; data is unaffected)</li>
       </ul>
+      <p>
+        <strong>What account deletion cannot reach:</strong> if you enabled Google Drive backup,
+        that encrypted copy sits in <em>your own</em> Google Drive private app-data area, which we
+        have no ability to read or delete. Deleting your account does not remove it. To delete it
+        yourself, go to Google Drive &rarr; <em>Settings</em> &rarr; <em>Manage apps</em> &rarr;
+        TINCAN &rarr; <em>Delete hidden app data</em>, or revoke TINCAN&rsquo;s Drive access from
+        your Google Account settings.
+      </p>
       <p><strong>Option 2 &mdash; Without the app:</strong> email
         <a href="mailto:customercare@tincan.anonaddy.com?subject=Delete%20my%20TINCAN%20account">customercare@tincan.anonaddy.com</a>
         from the address associated with your account and ask us to delete it. We will verify
